@@ -1,0 +1,16 @@
+
+.nav-bg{
+    background-color:#191c24 ;
+}
+.nav-icon div{
+    color:#ffffff;
+    font-size: 20px;
+}
+.message-icon{
+    background-color:#00d25b;
+    padding: 5px;
+}
+.notification-icon{
+    background-color:#fc424a;
+    padding: 5px;
+} 

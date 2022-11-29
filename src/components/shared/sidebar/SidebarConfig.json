@@ -1,0 +1,92 @@
+[
+    {
+        "title": "General",
+        "icon": "bi-gear-fill lavender-indigo",
+        "childrens": [
+            {
+                "title": "Home",
+                "icon": "bi-house-fill",
+                "path": "/"
+            },
+            {
+                "title": "About",
+                "icon": "bi-info-circle-fill",
+                "path": "/about"
+            },
+            {
+                "title": "Contact",
+                "icon": "bi-phone-fill",
+                "childrens": [
+                    {
+                        "title": "Facebook",
+                        "icon": "bi-facebook"
+                    },
+                    {
+                        "title": "Twitter",
+                        "icon": "bi-twitter"
+                    },
+                    {
+                        "title": "Instagram",
+                        "icon": "bi-instagram"
+                    }
+                ]
+            },
+            {
+                "title": "FAQ",
+                "icon": "bi-question-circle-fill"
+            }
+        ]
+    },
+    {
+        "title": "Users",
+        "icon": "bi bi-people yellow-orange",
+        "childrens": [
+            {
+                "title": "User List",
+                "path": "userlist"
+            },
+            {
+                "title": "Add Users",
+                "path": "adduser"
+            }    
+        ]
+    },
+    {
+        "title": "Roles",
+        "icon": "bi bi-people masper",
+        "childrens": [
+            {
+                "title": "Role List",
+                "path": "rolelist"
+            },
+            {
+                "title": "Add Role",
+                "path": "addrole"
+            }    
+        ]
+    },
+    {
+        "title": "Permissions",
+        "icon": "bi bi-people blue-eyes",
+        "childrens": [
+            {
+                "title": "Permission List",
+                "path": "permissionlist"
+            },
+            {
+                "title": "Add Permission",
+                "path": "addpermission"
+            }    
+        ]
+    },
+    {
+        "title": "Add Product",
+        "icon": "bi-question-circle-fill malachite",
+        "path": "add-product"
+    },
+    {
+        "title": "Orders",
+        "icon": "bi-bug lavender-indigo",
+        "path": "order-list"
+    }
+]

@@ -1,0 +1,86 @@
+import axios from 'axios';
+import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
+const AddUser = () => {
+  const navigate = useNavigate();
+  const [registerInput, setRegisterInput] = useState({
+
+    name:'',
+    email:'',
+    password:'',
+    error_list: [],
+
+  });
+  console.log(registerInput.error_list
+    )
+
+  const handleInput = (e) =>{
+    // e.presist();
+    setRegisterInput({...registerInput, [e.target.name]:e.target.value});
+  }
+
+  const registerSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      name:registerInput.name,
+      email:registerInput.email,
+      password:registerInput.password,
+    }
+    axios.post(`/api/users`, data)
+    .then((response) => {
+      Swal.fire(
+        response.data.message,
+        'You clicked the button!',
+        'success'
+      )
+      navigate('/admin/dashboard/userlist')
+    }).catch((e)=>{
+      setRegisterInput({...registerInput, error_list:e.response.data.errors}
+            )
+          
+  })
+
+  }
+
+  return (
+    <div className='container py-5'>
+      <div className='row justify-content-center'>
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-header bg-success">
+              <h4>Add User</h4>
+            </div>
+            <div className="card-body">
+              <form onSubmit={registerSubmit}>
+                <div className="form-group mb-3">
+                  <label>Full Name</label>
+                  <input type="text" name='name' onChange={handleInput} value={registerInput.name}  className='form-control' />
+                  <span className='text-danger'>{registerInput.error_list.name}</span>
+                </div>
+                <div className="form-group mb-3">
+                  <label>Email</label>
+                  <input type="email" name='email' onChange={handleInput} value={registerInput.email}  className='form-control'/>
+                  <span className='text-danger'>{registerInput.error_list.email}</span>
+                </div>
+                <div className="form-group mb-3">
+                  <label>Password</label>
+                  <input type="password" name='password' onChange={handleInput} value={registerInput.password}  className='form-control' />
+                  <span className='text-danger'>{registerInput.error_list.password}</span>
+                </div>
+                <div className="form-group mb-3">
+                  <button type='submit' className='btn btn-success'>Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
+
+export default AddUser
