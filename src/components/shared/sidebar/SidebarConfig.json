@@ -80,6 +80,11 @@
         ]
     },
     {
+        "title": "Assign Role",
+        "icon": "bi-question-circle-fill malachite",
+        "path": "assignrole"
+    },
+    {
         "title": "Add Product",
         "icon": "bi-question-circle-fill malachite",
         "path": "add-product"

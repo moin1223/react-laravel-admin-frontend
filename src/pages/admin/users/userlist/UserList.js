@@ -21,17 +21,18 @@ const UserList = () => {
 
   const fetchAllUsers = () => {
     axios.get(`/api/users?page=1`).then(res => {
-      console.log(res.data.data)
-      const totalData = res.data.total
+      // console.log(res.data.paginateUsers.total)
+      const totalData = res.data.paginateUsers.total
       setpageCount(Math.ceil(totalData / 5));
-      setUsers(res.data.data);
+      setUsers(res.data.paginateUsers.data);
       setLoading(true);
     })
   }
   const handlePageClick = (data) => {
     const currentPage = data.selected + 1;
     axios.get(`/api/users?page=${currentPage}`).then(res => {
-      setUsers(res.data.data);
+      setUsers(res.data.paginateUsers.data);
+      console.log(res.data)
       setLoading(true);
     })
 

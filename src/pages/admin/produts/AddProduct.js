@@ -30,7 +30,7 @@ const AddProduct = () => {
 
   const fetchAllUsers = () => {
     axios.get(`/api/users`).then(res => {
-      setUsers(res.data);
+      setUsers(res.data.users);
       setLoading(true);
 
     })

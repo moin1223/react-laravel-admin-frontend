@@ -19,7 +19,8 @@ const AssignRole = () => {
 
   const fetchAllUsers = () => {
     axios.get(`/api/users`).then(res => {
-      setUsers(res.data);
+      // console.log(res.data.users)
+      setUsers(res.data.users);
 
     })
   }
