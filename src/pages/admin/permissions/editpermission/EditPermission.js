@@ -42,7 +42,8 @@ const EditPermission = () => {
         const data = {
             name: permissionInput.name,
         }
-        axios.put('/api/permissions/' + id, data)
+        // axios.put('/api/permissions/' + id, data)
+        axios.put(`/api/permissions/${id}`, data)
             .then((response) => {
                 Swal.fire({
                     icon: 'success',

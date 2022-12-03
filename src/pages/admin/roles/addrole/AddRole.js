@@ -32,14 +32,22 @@ const AddRole = () => {
       )
       navigate('/admin/dashboard/rolelist')
     }).catch((e)=>{
-      setRoleInput({...roleInput, error_list:e.response.data.errors}
-            )
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: e.response.data.message,
+
+      })
           
   })
 
   }
 
+
+  
+
   return (
+
     <div className='container py-5'>
       <div className='row justify-content-center'>
         <div className="col-md-6">

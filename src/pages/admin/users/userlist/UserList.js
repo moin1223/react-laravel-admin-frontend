@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import Loader from '../../../../components/shared/loader/Loader'
 import { MdRemoveRedEye, MdDelete, MdModeEditOutline } from 'react-icons/md';
 import ReactPaginate from 'react-paginate';
-import Pagination from '../../../../components/shared/pagination/Pagination';
+// import Pagination from '../../../../components/shared/pagination/Pagination';
 
 const UserList = () => {
   const [users, setUsers] = useState([]);

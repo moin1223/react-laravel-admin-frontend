@@ -28,6 +28,9 @@ import UserProfile from './pages/user/userProfile/UserProfile';
 import AddProduct from './pages/admin/produts/AddProduct';
 import OrderList from './pages/admin/orders/orderList/OrderList';
 import OrderDetail from './pages/admin/orders/orderDetails/OrderDetail';
+import CategoryList from './pages/admin/categories/catagorylist/CategoryList';
+import AddCategory from './pages/admin/categories/addcategory/AddCategory';
+import CategoryDetails from './pages/admin/categories/categorydetails/CategoryDetails';
 
 
 
@@ -92,6 +95,11 @@ const App = () => {
               {/* orders */}
               <Route path="order-list" element={<OrderList />} />
               <Route path="order-details/:id" element={<OrderDetail />} />
+              {/* orders */}
+              <Route path="category-list" element={<CategoryList />} />
+              <Route path="add-category" element={<AddCategory />} />
+              <Route path="category-details/:id" element={<CategoryDetails />} />
+            
             </Route>
           </Route>
 

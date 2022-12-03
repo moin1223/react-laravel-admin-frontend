@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 const AssignRole = () => {
   const [users, setUsers] = useState([]);
@@ -67,16 +68,21 @@ const AssignRole = () => {
 
     axios.post('/api/users/roles', data)
       .then((response) => {
-        swal(response.data.message);
-        fetchUserRole();
-      }).catch((e) => {
-
-        // swal("Warning", e.response.data.message);
-        // setRoleInput({ ...roleInput, error_list: e.response.data.errors }
-
-        // )
-
+        Swal.fire({
+          icon: 'success',
+          title: response.data.message,
+          // text: response.data,
       })
+        fetchUserRole();
+      }).catch((e)=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: e.response.data.message,
+  
+        })
+            
+    })
 
   }
 

@@ -80,6 +80,20 @@
         ]
     },
     {
+        "title": "Categories",
+        "icon": "bi bi-people blue-eyes",
+        "childrens": [
+            {
+                "title": "Category List",
+                "path": "category-list"
+            },
+            {
+                "title": "Add Category",
+                "path": "add-category"
+            }    
+        ]
+    },
+    {
         "title": "Assign Role",
         "icon": "bi-question-circle-fill malachite",
         "path": "assignrole"
